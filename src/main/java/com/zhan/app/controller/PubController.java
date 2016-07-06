@@ -20,9 +20,9 @@ public class PubController {
 	public String pub(HttpServletRequest request, String content) {
 
 		JSONObject object = new JSONObject();
-		String title = "朴有天性侵案A女再翻供 称被男方挡住无法离开包厢";
+		String title = content;
 		object.put("id", "5776326d016d286fa9c71744");
-		object.put("token", "1059b49987cbfc7a9baf7afccd796deb9813fbd3597a5f035ce3a51aaa560062");
+		object.put("token", "d6207de6aa39c1517d315858500c7c8392ad81664ff3435220df515dbb408e2d");
 		object.put("alert", title);
 
 		redisTemplate.opsForList().leftPush(RedisKeys.KEY_NEWS_PUSH, object.toJSONString());

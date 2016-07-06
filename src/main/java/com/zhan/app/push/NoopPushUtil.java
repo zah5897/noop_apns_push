@@ -11,11 +11,11 @@ import com.zhan.app.util.TextUtils;
 
 public class NoopPushUtil {
 
-	private boolean isProduction = false;
+	private boolean isProduction = true;
 
 	private int poolSize = 10;
 	// *.p12文件位置
-//	private String iphoneCertPath = "D:/push_token/DEV/dev.p12";
+	// private String iphoneCertPath = "D:/push_token/DEV/dev.p12";
 	private String iphoneCertPath = "D:/push_token/DIS/dis.p12";
 	// *.p12文件密码
 	private String iphoneCertPassword = "magicpush";
@@ -54,12 +54,9 @@ public class NoopPushUtil {
 		String title = msg.alert;
 		String id = msg.id;
 		Map<String, String> jsonObject = new HashMap<String, String>();
-		jsonObject.put("appId", "");
 		jsonObject.put("type", "0");
 		// jsonObject.put("text", title);
 		jsonObject.put("id", id);
-		jsonObject.put("appName", "");
-		jsonObject.put("appDes", "");
 		boolean sound = true;
 		String deviceToken = msg.token;
 		String alert = title;
